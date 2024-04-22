@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: yodelling-owl-python-gitops
+  description: This is GitOps manifest for yodelling-owl-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: yodelling-owl-python
+    janus-idp.io/tekton: yodelling-owl-python 
+    backstage.io/kubernetes-id: yodelling-owl-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:yodelling-owl-python
